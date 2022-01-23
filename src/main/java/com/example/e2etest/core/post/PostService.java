@@ -11,8 +11,8 @@ public class PostService {
 
     private final PostRepository postRepository;
 
-    List<Post> findAll() {
-        return postRepository.findAll();
+    List<PostDto> findAll() {
+        return PostMapper.toDtos(postRepository.findAllBy());
     }
 
 }

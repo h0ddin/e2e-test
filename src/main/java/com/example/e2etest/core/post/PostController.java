@@ -13,9 +13,12 @@ public class PostController {
     private final PostService postService;
 
     @GetMapping("/posts")
-    public List<Post> findAll() {
-        List<Post> all = postService.findAll();
-        return null;
+    public List<PostDto> findAll() {
+        List<PostDto> posts = postService.findAll();
+        for (PostDto post : posts) {
+            System.out.println(post.getName() + " com: " + post.getComments());
+        }
+        return posts;
     }
 
 }
