@@ -42,9 +42,7 @@ class CommentMapperTest extends MapperBaseTest {
         assertEquals(result.get(2).getId(), comment3.getId());
         assertEquals(result.get(2).getContent(), comment3.getContent());
         assertEquals(result.get(2).getPostId(), comment3.getPost().getId());
-
     }
-
 
     @Test
     public void shouldReturnEmptyList() {
