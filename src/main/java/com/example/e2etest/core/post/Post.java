@@ -1,14 +1,16 @@
 package com.example.e2etest.core.post;
 
 import com.example.e2etest.core.comment.Comment;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class Post {

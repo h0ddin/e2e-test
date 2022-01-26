@@ -1,13 +1,15 @@
 package com.example.e2etest.core.comment;
 
 import com.example.e2etest.core.post.Post;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 
 @Setter
 @Getter
+@Builder
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table
 public class Comment {
