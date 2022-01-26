@@ -7,22 +7,20 @@ pipeline {
     stages {
         stage ('Initialize') {
             steps {
-                sh '''
-                    echo "PATH_SH = ${PATH}"
-                    echo "M2_HOME_SH = ${M2_HOME}"
-                '''
                 echo "PATH = ${PATH}"
                 echo "M2_HOME = ${M2_HOME}"
             }
         }
         stage('Build') {
             steps {
-                echo 'Building..'
+                echo 'Building...'
+                sh 'mvn clean install -DskipTests'
             }
         }
         stage('Test') {
             steps {
-                echo 'Testing..'
+                echo 'Testing...'
+                sh 'mvn test'
             }
         }
         stage('Deploy') {
